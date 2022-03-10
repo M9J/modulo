@@ -1,4 +1,9 @@
 export default class Runner {
+  titleStyle = [
+    'font-family:system-ui',
+    'font-size:1rem',
+    'font-weight:bold'
+  ].join(';')
   
   async runModules(modules) {
     if (modules) {
@@ -16,11 +21,7 @@ export default class Runner {
         console.log('\n');
         console.log(
           `%c${moduleInstance.name}`,
-          [
-            'font-family:system-ui',
-            'font-size:1rem',
-            'font-weight:bold'
-          ].join(';')
+          this.titleStyle
         );
         moduleInstance.main();
       }
