@@ -1,11 +1,5 @@
 export default class Runner {
   
-  run(modules) {
-    if (modules) {
-      this.runModules(modules);
-    }
-  }
-
   async runModules(modules) {
     if (modules) {
       const l = modules.length;
