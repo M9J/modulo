@@ -1,6 +1,5 @@
 export default class Runner {
-  moduleNames = [];
-
+  
   run(modules) {
     if (modules) {
       this.runModules(modules);
@@ -10,7 +9,9 @@ export default class Runner {
   async runModules(modules) {
     if (modules) {
       const l = modules.length;
-      for (let i = 0; i < l; i++) await this.runModule(modules[i]);
+      for (let i = 0; i < l; i++) {
+        await this.runModule(modules[i]);
+      }
     }
   }
 
@@ -21,7 +22,11 @@ export default class Runner {
         console.log('\n');
         console.log(
           `%c${moduleInstance.name}`,
-          'font-family:system-ui;font-size:1rem;font-weight:bold'
+          [
+            'font-family:system-ui',
+            'font-size:1rem',
+            'font-weight:bold'
+          ].join(';')
         );
         moduleInstance.main();
       }
