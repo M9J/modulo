@@ -9,7 +9,7 @@ export default function run(modules) {
         isEnabled = m.metadata.isEnabled;
       }
       if (isEnabled) {
-        console.log(m.metadata.name);
+        console.log(`===== ${m.metadata.name} =====`);
         if (m.main && typeof m.main === "function") {
           m.main();
         }
