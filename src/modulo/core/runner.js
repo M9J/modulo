@@ -19,7 +19,10 @@ export default class Runner {
       const moduleInstance = new module();
       if (moduleInstance.main) {
         console.log('\n');
-        console.log(`>> ${moduleInstance.name}`);
+        console.log(
+          `%c${moduleInstance.name}`,
+          'font-family:system-ui;font-size:1rem;font-weight:bold'
+        );
         moduleInstance.main();
       }
       if (moduleInstance.modules) {
