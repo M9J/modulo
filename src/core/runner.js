@@ -9,9 +9,11 @@ export default async function run(modules) {
 
 async function runModules(modules) {
   if (modules) {
-    modules.forEach(async (module) => {
-      await runModule(module);
-    });
+    let i = 0, l = modules.length;
+    while (i < l) {
+      await runModule(modules[i]);
+      ++i;
+    }
   }
 }
 
@@ -28,7 +30,11 @@ async function runModule(module) {
         }
       }
   }
-  await new Promise(r => setTimeout(r, 3000));
+  await sleep(1000)
   return true;
   
+}
+
+function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
 }
