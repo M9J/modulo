@@ -1,4 +1,4 @@
-export default async function run(modules) {
+export async function run(modules) {
   const hasModules = Array.isArray(modules) 
     ? modules.length > 0 
     : false;
@@ -30,7 +30,7 @@ async function runModule(module) {
         }
       }
   }
-  await sleep(1000)
+  await sleep(3000)
   return true;
   
 }
