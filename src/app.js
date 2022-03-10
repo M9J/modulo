@@ -1,6 +1,5 @@
-import * as Runner from './core/runner.js';
+import Runner from './modulo/core/runner.js';
 import Modules from './modules.js';
 
-Runner.run(
-  Modules.reverse()
-);
+const runner = new Runner();
+runner.run(Modules.reverse());
