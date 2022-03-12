@@ -1,15 +1,8 @@
-import { Arithmetic } from './arithmetic/arithmetic.js';
-import { LooperPerf } from './looper-perf/looper-perf.js';
+import { Arithmetic } from './arithmetic/_.js';
+import { LooperPerf } from './looper-perf/_.js';
 
 export default [
-  Arithmetic,
-  Arithmetic,
-  Arithmetic,
-  Arithmetic,
-  Arithmetic,
-  LooperPerf,
-  LooperPerf,
-  LooperPerf,
-  LooperPerf,
-  LooperPerf,
+  
+  // LooperPerf,
+  // Arithmetic,
 ];
