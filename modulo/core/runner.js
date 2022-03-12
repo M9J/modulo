@@ -1,10 +1,6 @@
+import delay from "../clock/delay.js";
+
 export default class Runner {
-  titleStyle = [
-    'font-family:system-ui',
-    'font-size:1rem',
-    'font-weight:bold'
-  ].join(';')
-  
   async runModules(modules) {
     if (modules) {
       const l = modules.length;
@@ -13,21 +9,29 @@ export default class Runner {
       }
     }
   }
-
+  
   async runModule(module) {
     if (module) {
       const moduleInstance = new module();
+      moduleNames.push(moduleInstance.name);
       if (moduleInstance.main) {
         console.log('\n');
-        console.log(
-          `%c${moduleInstance.name}`,
-          this.titleStyle
-        );
-        moduleInstance.main();
+        console.log(`%c${moduleNames.join(' / ')}`, titleStyle);
+        await moduleInstance.main();
+        await delay(10);
       }
       if (moduleInstance.modules) {
-        this.runModules(moduleInstance.modules);
+        await this.runModules(moduleInstance.modules);
       }
+      moduleNames.pop();
     }
   }
 }
+
+const titleStyle = [
+  'font-family:system-ui',
+  'font-size:1rem',
+  'font-weight:bold',
+].join(';');
+
+const moduleNames = [];
