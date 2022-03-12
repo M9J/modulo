@@ -1,13 +1,13 @@
-import delay from '../../modulo/clock/delay.js';
+import delay, { FPS100 } from '../../modulo/clock/delay.js';
 
 export class LooperPerf {
-  isEnabled = false;
+  isEnabled = true;
   name = 'LooperPerf';
 
   async main() {
     for (let i = 0; i < 99; i++) {
       this.log(i);
-      await delay(10);
+      await delay(FPS100);
     }
   }
 
