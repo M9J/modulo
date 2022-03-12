@@ -1,4 +1,4 @@
-import delay, { FPS100 } from '../clock/delay.js';
+import cycle, { FPS100 } from '../clock/cycle.js';
 
 export default class Runner {
   async runModules(modules) {
@@ -21,7 +21,7 @@ export default class Runner {
           console.log('\n');
           console.log(`%c${moduleNames.join(' / ')}`, titleStyle);
           await moduleInstance.main();
-          await delay(FPS100);
+          await cycle(FPS100);
         }
         if (moduleInstance.modules) {
           await this.runModules(moduleInstance.modules);

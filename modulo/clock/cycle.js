@@ -1,4 +1,4 @@
-export default function delay(ms = FPS1) {
+export default function cycle(ms = FPS1) {
   return new Promise((resolve) => {
     let tmr1 = setTimeout(() => {
       clearTimeout(tmr1);
