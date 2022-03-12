@@ -1,4 +1,5 @@
 export class Multiplication {
+  isEnabled = true;
   name = 'Multiplication';
 
   main() {

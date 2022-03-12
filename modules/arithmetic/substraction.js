@@ -2,6 +2,7 @@ import { Substraction1 } from './substraction/substraction1.js';
 import { Substraction2 } from './substraction/substraction2.js';
 
 export class Substraction {
+  isEnabled = true;
   name = 'Substraction';
   modules = [Substraction1, Substraction2];
 

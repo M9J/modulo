@@ -1,4 +1,5 @@
 export class Substraction2 {
+  isEnabled = true;
   name = 'Substraction2';
 
   main() {

@@ -1,4 +1,4 @@
-import delay from "../clock/delay.js";
+import delay from '../clock/delay.js';
 
 export default class Runner {
   async runModules(modules) {
@@ -9,21 +9,25 @@ export default class Runner {
       }
     }
   }
-  
+
   async runModule(module) {
     if (module) {
+      let isEnabled = false;
       const moduleInstance = new module();
-      moduleNames.push(moduleInstance.name);
-      if (moduleInstance.main) {
-        console.log('\n');
-        console.log(`%c${moduleNames.join(' / ')}`, titleStyle);
-        await moduleInstance.main();
-        await delay(10);
+      isEnabled = moduleInstance.isEnabled;
+      if (isEnabled) {
+        moduleNames.push(moduleInstance.name);
+        if (moduleInstance.main) {
+          console.log('\n');
+          console.log(`%c${moduleNames.join(' / ')}`, titleStyle);
+          await moduleInstance.main();
+          await delay(10);
+        }
+        if (moduleInstance.modules) {
+          await this.runModules(moduleInstance.modules);
+        }
+        moduleNames.pop();
       }
-      if (moduleInstance.modules) {
-        await this.runModules(moduleInstance.modules);
-      }
-      moduleNames.pop();
     }
   }
 }

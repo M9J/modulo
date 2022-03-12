@@ -1,4 +1,5 @@
 export class Division {
+  isEnabled = true;
   name = 'Division';
 
   main() {

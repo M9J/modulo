@@ -1,6 +1,7 @@
 export class Addition {
+  isEnabled = true;
   name = 'Addition';
-  
+
   main() {
     const a = 1;
     const b = 2;
