@@ -3,7 +3,7 @@ import { LooperPerf } from './looper-perf/_.js';
 import { Palindrome } from './palindrome/_.js'
 
 export default [
-  Palindrome
+  // Palindrome
   // LooperPerf,
-  // Arithmetic,
+  Arithmetic,
 ];
