@@ -5,19 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body style="background: #222; color: #fff;">
-    <!-- Using eruda for mobile accessibility / START -->
-    <script src="./cdn-cache/eruda.js"></script>
-    <script>
-      const erudaDevTools = JSON.stringify({
-        displaySize: 100,
-        theme: "Material Darker",
-        transparency: 1
-      });
-      localStorage.setItem('eruda-dev-tools', erudaDevTools);
-      eruda.init();
-      eruda._devTools.toggle();
-    </script>
-    <!-- Using eruda for mobile accessibility / END -->
+    <script src="./cdn-cache/eruda/eruda.js"></script>
+    <script src="./cdn-cache/eruda/eruda-init.js"></script>
     <script src="./modulo/modulo.js" type="module" defer></script>
   </body>
 </html>
