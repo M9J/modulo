@@ -7,13 +7,13 @@
   <body style="background: #222; color: #fff;">
     <script src="./cdn-cache/eruda.js"></script>
     <script>
-      eruda.init();
       const erudaDevTools = JSON.stringify({
         displaySize: 100,
         theme: "Material Darker",
         transparency: 1
       });
-      localStorage.setItem('eruda-dev-tools',erudaDevTools);
+      localStorage.setItem('eruda-dev-tools', erudaDevTools);
+      eruda.init();
       eruda._devTools.toggle();
     </script>
     <script src="./modulo/modulo.js" type="module" defer></script>
