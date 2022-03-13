@@ -3,7 +3,7 @@ import { Substraction } from './substraction.js';
 import { Multiplication } from './multiplication.js';
 import { Division } from './division.js';
 
-export class Arithmetic {
+export default class Arithmetic {
   isEnabled = true;
   name = 'Arithmetic';
   modules = [Addition, Substraction, Multiplication, Division];

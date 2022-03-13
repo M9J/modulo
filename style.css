@@ -1,0 +1,39 @@
+/* :root {
+  --color-light: #fff;
+  --color-dark: #000;
+} */
+
+:root {
+  --color-light: #000;
+  --color-dark: #fff;
+}
+
+body {
+  margin: 0;
+  background: var(--color-light);
+  font-family: monospace, sans-serif;
+}
+
+.modulo-container {
+  padding: 4px;
+}
+
+.modulo-module {
+  border: 1px solid var(--color-dark);
+  margin-bottom: 4px;
+}
+
+.modulo-module:last-child {
+  margin-bottom: 0px;
+}
+
+.modulo-title {
+  font-weight: bold;
+  padding: 2px 4px;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.modulo-content {
+  padding: 4px;
+}

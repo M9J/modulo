@@ -1,18 +1,14 @@
 import cycle, { FPS100 } from '../clock/cycle.js';
 
 export default class Runner {
-  async runModules(modules) {
-    if (modules) {
-      const l = modules.length;
-      for (let i = 0; i < l; i++) {
-        const relativePathPrefix = '../../modules';
-        const modulePathCleaned = modules[i].substr(1);
-        const modulePath = relativePathPrefix + modulePathCleaned;
-        const module = await import(modulePath);
-        await this.runModule(module.default);
+    async runModules(modules) {
+      if (modules) {
+        const l = modules.length;
+        for (let i = 0; i < l; i++) {
+          await this.runModule(modules[i]);
+        }
       }
     }
-  }
 
   async runModule(module) {
     if (module) {
@@ -28,18 +24,9 @@ export default class Runner {
           await cycle(FPS100);
         }
         if (moduleInstance.modules) {
-          await this.runSubmodules(moduleInstance.modules);
+          await this.runModules(moduleInstance.modules);
         }
         moduleNames.pop();
-      }
-    }
-  }
-
-  async runSubmodules(modules) {
-    if (modules) {
-      const l = modules.length;
-      for (let i = 0; i < l; i++) {
-        await this.runModule(modules[i]);
       }
     }
   }

@@ -1,4 +1,4 @@
-export class Palindrome {
+export default class Palindrome {
   isEnabled = true;
   name = 'Palindrome';
 

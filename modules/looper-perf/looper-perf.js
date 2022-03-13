@@ -1,6 +1,6 @@
 import cycle, { FPS100 } from '../../modulo/clock/cycle.js';
 
-export class LooperPerf {
+export default class LooperPerf {
   isEnabled = true;
   name = 'LooperPerf';
 
