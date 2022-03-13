@@ -1,8 +1,9 @@
 import cycle, { FPS100 } from '../../modulo/clock/cycle.js';
 
 export default class LooperPerf {
-  isEnabled = true;
+  isEnabled = false;
   name = 'LooperPerf';
+  logs = [];
 
   async main() {
     for (let i = 0; i < 99; i++) {

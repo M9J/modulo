@@ -5,13 +5,17 @@ export const moduloContainer = () => {
   return container;
 };
 
-export const moduloModule = (moduleName, moduleContent) => {
+export const moduloModule = (moduleName, moduleContents) => {
   const moduloModule = divElement('modulo-module');
   const moduloTitle = divElement('modulo-title');
   const moduloContent = divElement('modulo-content');
   const moduleTitle = textElement(moduleName);
   moduloTitle.appendChild(moduleTitle);
-  if (moduleContent) moduloContent.appendChild(moduleContent);
+  if (moduleContents) {
+    moduleContents.forEach((moduleContent) => {
+      moduloContent.appendChild(moduleContent);
+    });
+  }
   moduloModule.appendChild(moduloTitle);
   moduloModule.appendChild(moduloContent);
   return moduloModule;

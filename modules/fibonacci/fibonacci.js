@@ -1,6 +1,6 @@
-export default class Palindrome {
+export default class Fibonacci {
   isEnabled = true;
-  name = 'Palindrome';
+  name = 'Fibonacci';
 
   main() {
     let seq = [0, 1];

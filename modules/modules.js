@@ -1,15 +1,15 @@
 // import { Arithmetic } from './arithmetic/arithmetic.js';
 // import { LooperPerf } from './looper-perf/looper-perf.js';
-// import { Palindrome } from './palindrome/palindrome.js';
+// import { fibonacci } from './fibonacci/fibonacci.js';
 
 // export default [
-//   Palindrome
+//   fibonacci
 //   // LooperPerf,
 //   // Arithmetic,
 // ];
 
 export default [
-  './arithmetic/arithmetic.js',
+  // './arithmetic/arithmetic.js',
   './looper-perf/looper-perf.js',
-  './palindrome/palindrome.js',
+  './fibonacci/fibonacci.js',
 ];
