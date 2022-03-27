@@ -1,11 +1,11 @@
-export class Palindrome {
+export class Fibanocci {
   isEnabled = true;
-  name = 'Palindrome';
+  name = 'Fibanocci';
 
   main() {
     let seq = [0, 1];
     const next = () => seq.at(-1) + seq.at(-2);
-    while (next() < 1000) seq.push(next());
+    while (next() < 100) seq.push(next());
     console.log(seq);
   }
 }

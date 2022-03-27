@@ -5,7 +5,7 @@ export class LooperPerf {
   name = 'LooperPerf';
 
   async main() {
-    for (let i = 0; i < 99; i++) {
+    for (let i = 0; i < 25; i++) {
       this.log(i);
       await cycle(FPS100);
     }
